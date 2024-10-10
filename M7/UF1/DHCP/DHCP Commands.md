@@ -77,9 +77,14 @@ network:
 				- 192.168.1.1/24
 	version: 2
 ```
+###### Applying netplan:
+After making changes to the netplan, you must run the following command:
+```
+sudo netplan apply
+```
 ## 3. ISC-DHCP-SERVER Defaults
 ### Editing the file:
-##### We access the folder that contains the netplan:
+##### We access the folder that contains the defaults:
 ```
 cd /etc/default
 ```
@@ -103,4 +108,72 @@ In this case we have "enp0s8" so we will add it to the v4 interfaces:
 INTERFACESv4="enp0s8"
 INTERFACESv6=""
 ```
-## 4. 
+## 4. Editing the configuration of the DHCP server:
+### Editing the file:
+##### We access the folder that contains the configuration:
+```
+cd /etc/dhcp
+```
+##### Before editing the file, make a copy:
+```
+sudo cp dhcpd.conf dhcpd-copy.conf
+```
+##### Now we edit the file:
+```
+sudo nano dhcpd.conf
+```
+#### Now we need to set up the subnet and other network configuration of the DHCP server.
+###### Structure:
+```
+ddns-update-style none;
+subnet "xx.xx.xx.xx" netmask "xx.xx.xx.xx" {
+	range "first usable IP" "last usable IP";
+	option domain-name-server "DNS IP";
+	option domain-name "abc.def";
+	option routers "router IP";
+	option subnet-mask "netmask";
+	default-lease-time "s";
+	max-lease-time "s";
+}
+```
+##### Ex. Configuring 1 subnet:
+###### Adding a subnet:
+	- Subnet: 172.30.1.0/24
+	- Range: 172.30.1.100 - 172.30.1.254
+	- DNS IP: 172.30.1.1, 172.30.1.2
+	- Domain name: fristName-lastName.test
+	- Router: 172.30.1.1
+	- Default lease time: 3600
+	- Max lease time: 7200
+###### Modifying the file:
+```
+ddns-update-style none;
+subnet 172.30.1.0 netmask 255.255.255.0 {
+	range 172.30.1.100 172.30.1.254;
+	option domain-name-server 172.30.1.1, 172.30.1.2;
+	option domain-name fristName-lastName.test;
+	option routers 172.30.1.1;
+	option subnet-mask 255.255.255.0;
+	default-lease-time 3600;
+	max-lease-time 7200;
+}
+```
+###### Applying the config and checking it works:
+After making changes to the dhcpd.conf, you must run the following commands:
+###### Reseting the server:
+```
+sudo systemctl restart isc-dhcp-server
+```
+###### Checking if the configuration was succesfull:
+```
+sudo systemctl status isc-dhcp-server
+```
+If right to the "Active: " it shows "active (running)", all of the changes have been applied correctly. In the other end if to the right of "Active:" it shows "failed", something in the configuration was wrong. 
+###### To have a better diagnostic you can run the following command:
+```
+sudo cat /var/log/syslog | grep dhcpd
+```
+If this throws an error, run the following instead:
+```
+sudo cat /var/log/syslog | grep -a dhcpd
+```
