@@ -127,11 +127,11 @@ sudo nano dhcpd.conf
 ```
 ddns-update-style none;
 subnet "xx.xx.xx.xx" netmask "xx.xx.xx.xx" {
-	range "first usable IP" "last usable IP";
-	option domain-name-server "DNS IP";
+	range "xx.xx.xx.xx" "xx.xx.xx.xx";
+	option domain-name-server "xx.xx.xx.xx";
 	option domain-name "abc.def";
-	option routers "router IP";
-	option subnet-mask "netmask";
+	option routers "xx.xx.xx.xx";
+	option subnet-mask "xx.xx.xx.xx";
 	default-lease-time "s";
 	max-lease-time "s";
 }
