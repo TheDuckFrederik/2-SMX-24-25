@@ -8,7 +8,7 @@
 #### Now we click "Create custom view".
 ![[4.png]]
 #### In "Every event id." we type our event id (in this case 4624). After clicking Accept Windows will prompt us to name the view (I'll name it Act6).
-![[5.png]]
+![5](5.png)
 #### Click Accept and the custom view will pop up. It will show every 4624.
 # 2. Create a task.
 
