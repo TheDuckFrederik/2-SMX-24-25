@@ -55,7 +55,7 @@ This command will show all of the interfaces like in the following example:
 3: enp0s8:
 	inet "ip"
 ```
-The "enp0s" followed by a number is the name of an interface, bellow it we can find the ip and map of said interface. To add a interface to the netplan, (use the edit command if you exited the editor), we will add the interface enp0s8 and give it an IP address:
+The "enp0s" followed by a number is the name of an interface, bellow it we can find the ip and map of said interface. To add a interface to the netplan, (use the edit command if you exited the editor), we will add the interface enp0s8 and give it an IP address by:
 ###### Enabling DHCP:
 ```
 network:
@@ -77,3 +77,30 @@ network:
 				- 192.168.1.1/24
 	version: 2
 ```
+## 3. ISC-DHCP-SERVER Defaults
+### Editing the file:
+##### We access the folder that contains the netplan:
+```
+cd /etc/default
+```
+##### Before editing the file, make a copy:
+```
+sudo cp isc-dhcp-server isc-dhcp-server-copy
+```
+##### Now we edit the file:
+```
+sudo nano isc-dhcp-server
+```
+#### Now we need to set up the interface for the DHCP server.
+###### Structure:
+```
+INTERFACESv4=""
+INTERFACESv6=""
+```
+###### Adding an interface:
+In this case we have "enp0s8" so we will add it to the v4 interfaces:
+```
+INTERFACESv4="enp0s8"
+INTERFACESv6=""
+```
+## 4. 
