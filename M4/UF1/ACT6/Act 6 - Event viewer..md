@@ -1,26 +1,26 @@
 # 1. Create a custom view.
 #### First we need to open the Server Manager.
-![](1.png)
+![](Assets/1.png)
 #### Now click on tools, and then event viewer.
-![](2.png)
+![](Assets/2.png)
 #### In this case I will use event 4624 (a user logging in successfully). We will head to Windows Register and then security.
 
-![](3.png)
+![](Assets/3.png)
 #### Now we click "Create custom view".
-![](4.png)
+![](Assets/4.png)
 #### In "Every event id." we type our event id (in this case 4624). After clicking "Accept" Windows will prompt us to name the view (I'll name it Act6).
-![](5.png)
+![](Assets/5.png)
 #### Click Accept and the custom view will pop up. It will show every 4624.
 # 2. Create a task.
 ### First click on "Attach a file to this view", then "next", next "again".
-![](6.png)
+![](Assets/6.png)
 ### Here we choose the action that will be performed by Windows after a 4624, in this case I will choose the option "Start a program". I want to open the Powershell.
-![](7.png)
+![](Assets/7.png)
 `C:\\Windows\System32\WindowsPowerShell\v1.0\powershell.exe`
 ### After clicking "next", click "finish".
 # 3. Export the custom view as XML.
 ### Right click Act6 and then click "Export custom view", name the file and save it where you desire.
-![](8.png)
+![](Assets/8.png)
 ```
 <ViewerConfig>
   <QueryConfig>
@@ -69,5 +69,5 @@
 
 ```
 # 4. Import the custom view on a different VM.
-![](9.png)
+![](Assets/9.png)
 ### Now just choose the XML file.
