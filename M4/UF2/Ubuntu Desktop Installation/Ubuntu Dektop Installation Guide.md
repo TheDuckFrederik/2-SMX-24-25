@@ -1,6 +1,7 @@
 # 1. [[VirtualBox]]
 Once [[VirtualBox]] is open, click on "New".
 ![](Assets/1.png)
+
 You will be prompted with a widow to set the preperties and settings of the [[VM]], in the "Name and Operating System", fill the info (you don't need to copy this exactly, but take it as some guidance):
 
 - Name: M4_Ubuntu_Desktop
