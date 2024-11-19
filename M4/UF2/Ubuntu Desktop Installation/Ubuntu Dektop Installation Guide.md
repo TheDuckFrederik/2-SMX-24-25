@@ -26,7 +26,7 @@ Last, "Hard Disk":
 
 Now click "Finish", you may now click "Start".
 ![](Assets/5.png)
-# 2. Ubuntu
+# 2. Ubuntu Installer
 When the [[VM]] powers up, Ubuntu will prompt you. By default "Try or Install Ubuntu" will be selected, press enter.
 ![](Assets/6.png)
 
@@ -53,3 +53,9 @@ Now fill all of the name and login text boxes and click "Continue".
 
 Now, we wait......
 ![](Assets/14.png)
+
+Once you have waited, you can click "Restart Now" and remove the iso.
+![](Assets/15.png)
+
+# 3. Ubuntu
+
