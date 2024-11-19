@@ -3,7 +3,6 @@ Once [[VirtualBox]] is open, click on "New".
 ![](Assets/1.png)
 
 You will be prompted with a widow to set the preperties and settings of the [[VM]], in the "Name and Operating System", fill the info (you don't need to copy this exactly, but take it as some guidance):
-
 - Name: M4_Ubuntu_Desktop
 - Folder: C:\\User\VM_Folder
 - ISO Image: C:\\User\ubuntu-desktop.iso
@@ -14,14 +13,12 @@ Also select the box next to "Skip Unattended Installation".
 ![](Assets/2.png)
 
 Now to the "Hardware" section:
-
 - RAM: 4096 MB
 - Cores/CPUs: 2
 
 ![](Assets/3.png)
 
 Last, "Hard Disk":
-
 - Hard Disk File Location: C:\\User\VM_Folderm4_ubuntu_desktop.vdi
 - Hard Disk File Size: 50 GB
 
