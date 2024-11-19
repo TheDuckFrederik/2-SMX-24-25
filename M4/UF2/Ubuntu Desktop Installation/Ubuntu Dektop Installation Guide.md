@@ -26,7 +26,7 @@ Last, "Hard Disk":
 
 Now click "Finish", you may now click "Start".
 ![](Assets/5.png)
-
+# 2. Ubuntu
 When the [[VM]] powers up, Ubuntu will prompt you. By default "Try or Install Ubuntu" will be selected, press enter.
 ![](Assets/6.png)
 
