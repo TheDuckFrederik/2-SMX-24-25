@@ -70,7 +70,12 @@ Now in Ubuntu we open the Guest Additions Image from the dock in the left.
 Now you need to find the file `Autorun.sh`, once you have. Right click on the file and click "Run as a Program"
 ![](Assets/18.png)
 
-Now Ubuntu will prompt you to 
+Now Ubuntu will prompt you to insert your password to execute the script.
+![](Assets/19.png)
+
+Now eject the Guest Additions CD.
+![](Assets/20.png)
+
 
 
 
