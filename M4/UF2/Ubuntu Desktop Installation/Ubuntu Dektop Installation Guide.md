@@ -1,4 +1,5 @@
-# 1. [[VirtualBox]]
+# 1. Install Ubuntu Desktop
+## a) [[VirtualBox]]
 Once [[VirtualBox]] is open, click on "New".
 ![](Assets/1.png)
 
@@ -26,7 +27,7 @@ Last, "Hard Disk":
 
 Now click "Finish", you may now click "Start".
 ![](Assets/5.png)
-# 2. Ubuntu Installer
+## b) Ubuntu Installer
 When the [[VM]] powers up, Ubuntu will prompt you. By default "Try or Install Ubuntu" will be selected, press enter.
 ![](Assets/6.png)
 
@@ -57,5 +58,20 @@ Now, we wait......
 Once you have waited, you can click "Restart Now" and remove the iso.
 ![](Assets/15.png)
 
-# 3. Ubuntu
+# 2. Guest Additions
+## a) [[VirtualBox]]
+Now with the VM on, click on the "Devices" tab at the top of the window of the VM. In this menu click "Insert Guest Additions CD image..."
+![](Assets/16.png)
+
+## b) Ubuntu
+Now in Ubuntu we open the Guest Additions Image from the dock in the left.
+![](Assets/17.png)
+
+Now you need to find the file `Autorun.sh`, once you have. Right click on the file and click "Run as a Program"
+![](Assets/18.png)
+
+Now Ubuntu will prompt you to 
+
+
+
 
