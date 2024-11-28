@@ -44,6 +44,7 @@ Click on "Install Now" that will format the drive and install Ubuntu on the enti
 ![](Assets/10.png)
 
 Click "Continue" to cofirm.
+
 ![](Assets/11.png)
 
 It takes us to the "Where are you" section, select your region and click "Continue.
