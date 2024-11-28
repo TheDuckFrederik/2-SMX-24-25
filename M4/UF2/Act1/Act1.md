@@ -76,7 +76,26 @@ Now Ubuntu will prompt you to insert your password to execute the script.
 Now eject the Guest Additions CD.
 ![](Assets/20.png)
 
+# 3. Add a 1GB disk to the VM.
+## a) [[VirtualBox]]
+First off, we need to enter the VM "Settings" menu. Here click on "Storage". Now in the "Controller: SATA" at the right there are two buttons with a "+" sign. Click the one in the right.
+![](Assets/21.png)
 
+Click "Create".
+![](Assets/22.png)
 
+Here set the Disk size to 1GB and tick the "Pre-allocate Full Size" box. Then click "Finish".
+![](Assets/23.png)
+
+Once it has been created the disk will appear in the "Not Attached" list. Click "Choose".
+![](Assets/24.png)
+
+Now in the "Settings" window click "Ok" and start the VM back up.
+![](Assets/25.png)
+
+# 4. Show partitions with `fdisk -l`
+## a) Ubuntu
+Open the Terminal and execute the command (`fdisk -l`).
+![](Assets/26.png)
 
 
