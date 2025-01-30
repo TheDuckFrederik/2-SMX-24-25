@@ -1,6 +1,6 @@
 # 1. Preparació de l’entorn:
 ## a) Crea tres carpetes compartides en el servidor amb els noms: Activitat1-X, Activitat2-X i Activitat3-X.
-
+![](Assets/)
 ## b) Crea 3 usuaris amb els noms que vulguis i 2 grups al teu servidor.
 
 ## c) Assigna permisos específics a cada carpeta per diferents usuaris o grups.
