@@ -1,3 +1,5 @@
+# Act6 - Event Viewer
+***
 # 1. Create a custom view.
 #### First we need to open the Server Manager.
 ![](Assets/1.png)
