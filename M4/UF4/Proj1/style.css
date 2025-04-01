@@ -14,6 +14,27 @@ h1, h2, p {
     text-align: center;
 }
 
+h1 {
+    font-weight: 700;
+    font-size: 4rem;
+    color: #333;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
 .sidebar {
     position: fixed;
     left: -250px;
@@ -68,4 +89,14 @@ h1, h2, p {
     border: none;
     color: white;
     cursor: pointer;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #555;
+    margin: 15px 0;
+}
+
+.github-btn {
+    font-weight: 600;
 }
