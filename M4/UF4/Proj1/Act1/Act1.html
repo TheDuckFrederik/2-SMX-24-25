@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projecte 1</title>
+    <title>Act 1</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
@@ -22,17 +22,118 @@
         <h1>Activitat 1</h1>
         <h2>Compartir una impressora de Linux a Windows</h2>
         <p>
-            La vostra oficina disposa d'una impressora centralitzada que està connectada a un equip amb Linux. La resta d'ordinadors de l'oficina fan servir Windows 10. Has de fer que tots els usuaris puguin utilitzar la impressora. La xarxa de l'oficina fa servir aquestes adreces IP. On X és el número assignat al teu grup.
+            La vostra oficina disposa d'una impressora centralitzada que està connectada a un equip amb Linux. La resta d'ordinadors de l'oficina fan servir Windows 10. Has de fer que tots els usuaris puguin utilitzar la impressora.
         </p>
-        <div class="iframe-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/cDi-7qfJwPs?si=_Y360tOyPKsXn8IV" title="Video Act 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <hr>
+        <h3>1. Posar IP a les dues maquines</h3>
+        <p>Les dues màquines han d'estar a la mateixa xarxa. Podem observar les IP corresponents a aquest diagrama.</p>
+        <div class="image-container">
+            <img src="../Assets/ILW.png" alt="Compartir impressora Linux a Windows" >
         </div>
-        <!-- <p>
-            Tutorial: Pàgina web amb explicació pas a pas de com s'ha resolt la situació proposada. Pots utilitzar qualsevol plataforma que sigui on line i gratuïta con Github, Gitlab, Google Sites...
-        </p>
-        <p>
-            Presentació: Amb l´ordinador fareu una demostració a classe de com ho heu resolt.
-        </p> -->
+        <hr>
+        <h3>2. Instal·lar servei d'impressora a Linux.</h3>
+        <p>Instal·lar CUPS i CUPS printer driver.</p>
+        <code>sudo apt update</code>
+        <br>
+        <code>sudo apt install cups</code>
+        <hr>
+        <h3>3. Compartim la impressora per CUPS.</h3>
+        <p>Primer obrirem <code>http://localhost:631</code> al navegador. Despres clicarem a la pestanya de administració i seguirem els pasos.</p>
+        <div class="image-container">
+            <img src="../Assets/CUPS1.png" alt="CUPS Aadmin" >
+        </div>
+        <div class="image-container">
+            <img src="../Assets/CUPS2.png" alt="CUPS Aadmin" >
+        </div>
+        <div class="image-container">
+            <img src="../Assets/CUPS3.png" alt="CUPS Aadmin" >
+        </div>
+        <div class="image-container">
+            <img src="../Assets/CUPS4.png" alt="CUPS Aadmin" >
+        </div>
+        <div class="image-container">
+            <img src="../Assets/CUPS5.png" alt="CUPS Aadmin" >
+        </div>
+        <div class="image-container">
+            <img src="../Assets/CUPS6.png" alt="CUPS Aadmin" >
+        </div>
+        <hr>
+        <h3>4. Canviar el fitxer de configuració de CUPS.</h3>
+        <p>Afegir, si no està ja, aquestes línies al fitxer de configuració <code>/etc/cups/cupsd.conf</code></p>
+        <code style="text-align: left;">
+            # Permitir acceso desde otros equipos
+            <br>
+            Listen 0.0.0.0:631
+            <br>
+            Listen [::]:631
+            <br>
+            <br>
+            # Permitir acceso a la configuración de CUPS desde cualquier IP de la red
+            <br>
+            &lt;Location /&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Order allow,deny
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Allow @LOCAL
+            <br>
+            &lt;/Location&gt;
+            <br>
+            <br>
+            &lt;Location /admin&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Order allow,deny
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Allow @LOCAL
+            <br>
+            &lt;/Location&gt;
+            <br>
+            <br>
+            &lt;Location /printers&gt;
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Order allow,deny
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;Allow @LOCAL
+            <br>
+            &lt;/Location&gt;
+        </code>
+        <div class="image-container">
+            <img src="../Assets/CUPS7.png" alt="CUPS Aadmin" >
+        </div>
+        <hr>
+        <h3>5. Reiniciar el servei CUPS.</h3>
+        <code>sudo systemctl restart cups</code>
+        <hr>
+        <h3>6. Afegir impressora a l'ordinador client.</h3>
+        <div class="image-container" style="margin-top: 20px;">
+            <img src="../Assets/CUPS8.png" alt="CUPS Aadmin">
+        </div>
+        <div class="image-container" style="margin-top: 20px;">
+            <img src="../Assets/CUPS9.png" alt="CUPS Aadmin">
+        </div>
+        <div class="image-container" style="margin-top: 20px;">
+            <img src="../Assets/CUPS10.png" alt="CUPS Aadmin">
+        </div>
+        <div class="image-container" style="margin-top: 20px;">
+            <img src="../Assets/CUPS11.png" alt="CUPS Aadmin">
+        </div>
+        <div class="image-container" style="margin-top: 20px;">
+            <img src="../Assets/CUPS12.png" alt="CUPS Aadmin">
+        </div>
+        <div class="image-container" style="margin-top: 20px;">
+            <img src="../Assets/CUPS13.png" alt="CUPS Aadmin">
+        </div>
+        <div class="image-container" style="margin-top: 20px;">
+            <img src="../Assets/CUPS14.png" alt="CUPS Aadmin">
+        </div>
+        <div class="image-container" style="margin-top: 20px;">
+            <img src="../Assets/CUPS15.png" alt="CUPS Aadmin">
+        </div>
+        <div class="image-container" style="margin-top: 20px;">
+            <img src="../Assets/CUPS16.png" alt="CUPS Aadmin">
+        </div>
+        <div class="image-container" style="margin-top: 20px;">
+            <img src="../Assets/CUPS17.png" alt="CUPS Aadmin">
+        </div>
     </div>
 </body>
 </html>

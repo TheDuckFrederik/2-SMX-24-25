@@ -5,3 +5,4 @@
 ***
 ## Projectes
 ### [Projecte 1](/M4/UF4/Proj1/Proj1.html) [link](https://theduckfrederik.github.io/2-SMX-24-25/M4/UF4/Proj1/Proj1.html)
+### [Projecte 2 link]()
